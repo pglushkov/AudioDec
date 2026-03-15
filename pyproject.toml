@@ -15,6 +15,10 @@ dependencies = [
     "tqdm",
 ]
 
+[tool.setuptools.package-data]
+stats = ["*.npy"]
+
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["utils*", "models*", "layers*", "bin*", "dataloader*"]
+include = ["utils*", "models*", "layers*", "bin*", "dataloader*", "stats*"]
+

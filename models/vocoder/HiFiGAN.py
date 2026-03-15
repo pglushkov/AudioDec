@@ -211,6 +211,9 @@ class Generator(nn.Module):
 
         """
         assert stats.endswith(".h5") or stats.endswith(".npy")
+        if not os.path.exists(stats):
+            package_root = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+            stats = os.path.join(package_root, stats)
         assert os.path.exists(stats), f"Stats {stats} does not exist!"
         mean = np.load(stats)[0].reshape(-1)
         scale = np.load(stats)[1].reshape(-1)
