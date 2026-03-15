@@ -1,0 +1,20 @@
+# Minimal pyproject.toml for AudioDec fork
+# Place this file in the root of the forked AudioDec repository
+[project]
+name = "audiodec"
+version = "0.1.0"
+description = "AudioDec: An Open-source Streaming High-fidelity Neural Audio Codec"
+requires-python = ">=3.12"
+dependencies = [
+    "soundfile>=0.12.1",
+    "numpy>=2.4.0",
+    "torch>=2.0.0",
+    "torchaudio>=2.0.1",
+    "librosa",
+    "pyyaml",
+    "tqdm",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["utils*", "models*", "layers*", "bin*", "dataloader*"]
